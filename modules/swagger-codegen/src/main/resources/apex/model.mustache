@@ -1,0 +1,20 @@
+{{#models}}
+
+{{#model}}{{#description}}
+/**
+ * {{description}}
+ **/{{/description}}
+{{>generatedAnnotation}}
+public class {{classname}} {{#parent}}extends {{{parent}}}{{/parent}} {
+  {{#vars}}{{#isEnum}}
+{{>enumClass}}{{/isEnum}}{{#items.isEnum}}{{#items}}
+{{>enumClass}}{{/items}}{{/items.isEnum}}
+  {{/vars}}
+  {{#vars}}
+  public {{{datatypeWithEnum}}} {{baseName}} {
+    {get;set;}
+  }
+  {{/vars}}
+}
+{{/model}}
+{{/models}}
